@@ -36,7 +36,7 @@ client.connect(err => {
         
         //add new news
         app.post('/addNews', (req, res) => {
-            const service = req.body;
+            const news = req.body;
             newsCollection.insertOne(service)
                 .then(result => {
                     res.send(result.insertedCount > 0);
