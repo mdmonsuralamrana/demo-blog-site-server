@@ -37,11 +37,12 @@ client.connect(err => {
         //add new news
         app.post('/addNews', (req, res) => {
             const news = req.body;
-            newsCollection.insertOne(service)
+            newsCollection.insertOne(news)
                 .then(result => {
                     res.send(result.insertedCount > 0);
                 })
         })
+
 
         //delete news
         app.delete('/deleteNews/:id', (req, res) => {
